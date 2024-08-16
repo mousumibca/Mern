@@ -1,0 +1,10 @@
+mongodb+srv://mousumi:<password>@cluster0.0zhuuha.mongodb.net/<database_name>?retryWrites=true&w=majority&appName=Cluster0
+
+databaseName=mern_data
+
+atlas URI=mongodb://atlas-sql-66af2606b59c3822104ec475-ue4o1.a.query.mongodb.net/sample_mflix?ssl=true&authSource=admin
+
+
+username=mousumi
+password=bRDUBtimkA2hXyza
+

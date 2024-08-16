@@ -1,0 +1,15 @@
+const Contact=require("../models/Contact_model");
+
+
+const contactForm = async(req,res)=>{
+    try {
+        const response=req.body;
+        await Contact.create(response);
+        return res.status(200).json({message:"message send successfully"});
+    } catch (error) {
+        console.log(error);
+        return req.status(500).json({message: "message not delivered"});
+        }
+};
+
+module.exports=contactForm;
