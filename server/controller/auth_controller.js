@@ -37,8 +37,8 @@ const login = async (req, res) => {
         const isPasswordValid = await userExist.comparePassword(password);
 
         if (isPasswordValid) {
-                console.log(password);//show password in cmd
-                res.status(200).json({
+            console.log(password);//show password in cmd
+            res.status(200).json({
                 msg: `login sucessfully ${password}`,
                 token: await userExist.generateToken(),
                 userId: userExist._id.toString(),
@@ -49,4 +49,13 @@ const login = async (req, res) => {
     }
 }
 
-module.exports = { home, register, login };
+const user = async (res, req) => {
+    try {
+        const userData = req.user;
+        console.log(userData);
+        return res.status(400).json({userData })
+    } catch (error) {
+    }
+}
+
+module.exports = { home, register, login, user };

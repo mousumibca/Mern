@@ -1,12 +1,14 @@
 const express = require("express");
 const router = express.Router();
-const auth_controller = require("../controller/auth_controller");
+const authController = require("../controller/auth_controller");
 const validate=require("../middleware/validate_middleware");
 const signupSchema = require("../validators/auth_validator");
+const authMiddleware=require("../middleware/authMiddleware");
 
-router.route("/").get(auth_controller.home);
-router.route("/register").post(validate(signupSchema), auth_controller.register);
-router.route("/login").post(auth_controller.login);
+router.route("/").get(authController.home);
+router.route("/register").post(validate(signupSchema), authController.register);
+router.route("/login").post(authController.login);
+router.route("/user").get(authMiddleware, authController.user);
 
 
 

@@ -5,6 +5,8 @@ import { Icon } from 'react-icons-kit';
 import { eyeOff } from 'react-icons-kit/feather/eyeOff';
 import { eye } from 'react-icons-kit/feather/eye';
 import { useAuth } from '../../store/Auth';
+import {Navigate} from 'react-router-dom';
+
 
 export const Login = () => {
     const [user, setuser] = useState({
@@ -57,6 +59,7 @@ export const Login = () => {
                 storeTokenInLS(responseData.token);
                 setuser({ username: "", password: "" });
                 console.log(responseData);
+                return <Navigate to="/about"/>;
             } else {
                 console.log("error inside response ", "error");
             }

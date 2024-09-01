@@ -8,3 +8,4 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <App />
   </AuthProvider>
 )
+// run in chrome =npm run dev
